@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Full Stack file </title>
+</head>
+<body>
+    <script>
+      async function full_stack(){
+        const res=await fetch("http://localhost:3000/");
+        if(!res.ok){
+            throw Error("failed to load ",res.status)
+        }
+        const data = await res.text();
+        console.log(data,data1)
+      }
+      full_stack();
+    </script>
+</body>
+</html>
