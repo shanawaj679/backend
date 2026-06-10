@@ -23,4 +23,4 @@
     catch(err){
         throw new Error(`database fetch error ${err}`)
     }
-}) // this  is api used to send data from backend to frontend
+}) // this  is api used to send  data from backend to front end
