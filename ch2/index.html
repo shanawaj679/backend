@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>learning_DB_connection</title>
+</head>
+<body>
+    <p id="print"></p>
+    <script>
+        async function getdata(){
+            try{
+                const response = await fetch("http://localhost:3000/employee")
+                if(!response.ok){
+                    throw new Error(`response status error: ${response.status}`)
+                }
+                const data=await response.json();
+                document.getElementById("print").innerHTML=JSON.stringify(data);
+            }
+            catch(err){
+                throw new Error(err);
+            }
+        }
+        getdata();
+    </script>
+</body>
+</html>
