@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>basc_CRUD_app</title>
+</head>
+<body>
+    <input type="number" id="eid">
+    <input type="text" id="ename">
+    <input type="number" id="eage">
+       <p>CRUD = create,read,update,delete</p>
+       <div>
+        <button onclick="createdata()" type="submit">Create_data</button>
+              <button onclick="getdata()">Read_data</button>
+                    <button onclick="updatedata()">Update_data</button>
+                          <button onclick="deletedata()">Delete_data</button>
+    </div>
+    <div id="data">
+    </div>
+    <script>
+        
+              async function getdata(){
+                try{
+                    const response = await fetch("http://localhost:3000/employee")
+                    if(!response.ok){
+                        throw new Error(`fetch error check status : ${response.status}`)
+                    }
+                    const data = await response.json()
+                   document.getElementById("data").innerHTML= JSON.stringify(data);
+                }
+                catch(err){
+                    throw new Error(err)
+                }
+              }
+            async function createdata(){
+                const data={
+            ename:document.getElementById("ename").value,
+            eage:document.getElementById("eage").value,
+            eid:document.getElementById("eid").value
+        }
+                try{
+                    const response =await fetch("http://localhost:3000/employee",{
+                        method:"post",
+                        headers:{
+                            "Content-Type":"application/json"
+                        },
+                        body:JSON.stringify(data)
+                    })
+                }
+                catch(err){
+                    throw new Error(err)
+                }
+            }
+            async function updatedata(){}
+            async function deletedata(){}
+
+    </script>
+</body>
+</html>
