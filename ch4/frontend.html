@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>basic CRUD app</title>
+</head>
+<body>
+    <header>
+        <div style="display: flex; flex-direction: column;"> 
+           Email : <input type="email" placeholder="enter your email" id="email">
+           Password : <input type="password" placeholder="enter your password" id="password">
+           Name : <input type="text" placeholder="enter your name" id="name">
+           <button type="submit" onclick="postdata()">register</button>
+           <p id="register_output"></p>
+       </div>
+    </header>
+    <main>
+        <div>
+             <a href="/ch4/forgetpassword.html">forget password(click me)</a>
+      
+        </div>
+        <div>
+            <a href="/ch4/deleteuser.html">delete_user(click me)</a>
+           
+        </div>
+       
+    </main>
+    <footer>
+        wanna check db : <a href="/ch4/checkdb.html">check DB (click me)</a>
+    </footer>
+</body>
+<script src="/ch4/frontend.js"></script>
+</html>
